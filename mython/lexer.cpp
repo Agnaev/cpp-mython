@@ -16,18 +16,23 @@ namespace parse {
     if (lhs.index() != rhs.index()) {
       return false;
     }
+
     if (lhs.Is<Char>()) {
       return lhs.As<Char>().value == rhs.As<Char>().value;
     }
+    
     if (lhs.Is<Number>()) {
       return lhs.As<Number>().value == rhs.As<Number>().value;
     }
+    
     if (lhs.Is<String>()) {
       return lhs.As<String>().value == rhs.As<String>().value;
     }
+    
     if (lhs.Is<Id>()) {
       return lhs.As<Id>().value == rhs.As<Id>().value;
     }
+    
     return true;
   }
 
